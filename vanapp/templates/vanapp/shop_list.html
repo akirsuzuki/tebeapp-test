@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block script %}
+
+{% endblock script %}
+
+{% block content %}
+ <div class="content-wrapper">
+   <div class="container-fluid">
+      <form action="" method="POST" class="search-form">
+          <div class="form-group inputwithicon">
+              <i class="lni-tag"></i>
+              <input type="search" class="form-control" name="freeword" placeholder="フリーワード">
+          </div>
+          <div class="form-group inputwithicon">
+              <i class="lni-menu"></i>
+              <div class="select">
+                  <select>
+                  <option value="none">カテゴリー</option>
+                  {% for item in category_list %}
+                      <option name="selected_category" value="none">{{ item.name }}</option>
+                  {% endfor %}
+                  </select>
+              </div>
+          </div>
+          <button class="btn btn-common" type="submit"><i class="lni-search"></i> 検索</button>
+          {% csrf_token %}
+      </form>
+
+
+     <!--ページタイトル-->
+     <div class="card mb-3">
+       <div class="card-header">
+         <h3><b>{% if total_hit_count %}{{ total_hit_count }}件あります。{% else %}
+           データがありません。{% endif %}
+         </b></h3></div>
+        {% for item in restaurants_info %}
+        <div class="card-body">
+            <p>店舗名：{{ item.1 }}</p>
+            <p>かな：{{ item.2 }}</p>
+            <p>住所：{{ item.7 }}</p>
+        </div>
+        {% empty %}
+        <b>データなし</b>
+       {% endfor %}
+      </div>
+      </div>
+   </div>
+  </div>
+
+{% endblock content %}

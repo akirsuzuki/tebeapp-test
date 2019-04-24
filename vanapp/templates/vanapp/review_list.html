@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/review.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for item in review_list %}
+            <div class="balloon5">
+                <div class="faceicon">
+                    <img src="{% static 'image/reviewer.png' %}">
+                    <p class="small">{{ item.user }}</p>
+                </div>
+                <div class="chatting">
+                    <div class="says">
+                        <img src="{{ item.image_url }}" height="150px" width="150px">
+                        <p>{{ item.score }}点</p>
+                        <p>{{ item.comment }}</p>
+                        <Hr>
+                        <p>{{ item.shop_name }}</p>
+                        
+                        <p class="small">{{ item.created_at }}</p>            
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
