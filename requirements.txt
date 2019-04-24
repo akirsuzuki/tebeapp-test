@@ -1,10 +1,12 @@
 dj-database-url==0.5.0
 gunicorn==19.9.0
+whitenoise==3.3.1
 Django==2.2
 django-forms-bootstrap==3.1.0
-pytz==2018.9
+pytz==2018.4
 psycopg2==2.7.5
-whitenoise==3.3.1
+Pillow==5.4.1
+
 
 # alabaster==0.7.12
 # anaconda-client==1.7.2
@@ -120,7 +122,6 @@ whitenoise==3.3.1
 # patsy==0.5.1
 # pep8==1.7.1
 # pickleshare==0.7.5
-# Pillow==5.4.1
 # pkginfo==1.5.0.1
 # pluggy==0.9.0
 # ply==3.11
