@@ -1,0 +1,1 @@
+web: gunicorn vanpj4.wsgi

@@ -1,1 +1,0 @@
-web: gunicorn vanpj4.wsgi --log-file -
