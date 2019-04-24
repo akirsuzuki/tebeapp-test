@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 
 # Staticフォルダを作り、CSSなどを保存するときに追加
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'vanapp/static'),
 ]
 
 # ログイン機能実装時に追加
